@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html data-theme="light">
+    <head>
+        <meta charset="utf-8" />
+        <title>Go WebAssembly</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="wasm_exec.js" defer></script>
+        <script src="wasm.js" defer></script>
+
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+        />
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>Reader2</h1>
+
+            <div class="grid">
+                <div>
+                    <input type="text" name="pageURL" id="pageURL" placeholder="Enter page URL here!"/>
+                    
+                </div>
+                <div>
+					<input type="button" id="loadURL" value="Prettify it!" />
+				</div>
+            </div>
+
+            <h2 id="title"></h2>
+			<article name="output" id="output"></article>
+        </main>
+    </body>
+</html>
