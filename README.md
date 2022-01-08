@@ -5,7 +5,15 @@ This is successor to the [old reader project](https://github.com/tuananh/reader)
 
 This is just a weekend project for me to learn Go and WebAssembly. Pardon the beginner mistakes you may find in this repo :)
 
+The end goal is same as v1. Nothing change. In the end, you get a sharable URL like below:
+
+```
+https://<this-website.com>/?url=https://www.theverge.com/xyz
+```
+
+
 ![](./assets/preview.png)
+
 
 ## TODO
 
