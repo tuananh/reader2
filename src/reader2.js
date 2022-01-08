@@ -12,8 +12,13 @@ function getQuerystringByName(name) {
 }
 
 function isValidURL(url) {
-  // TODO: 
-  return true;
+  const pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+    '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+  return !!pattern.test(url);
 }
 
 function copyShareURL() {
@@ -31,10 +36,9 @@ function prettifyPage() {
   const pageURL = document.querySelector('#pageURL').value || getQuerystringByName("url");
   
   if (isValidURL(pageURL)) {
-    console.log('valid URL. Printing reader mode for ' + pageURL)
     loadURL('https://cors-proxy.tuananh.workers.dev/?' + pageURL);
   } else {
-    console.error('invalid URL');
+    console.error('invalid URL: ' + pageURL);
   }
 }
 
@@ -63,6 +67,14 @@ function init() {
     inst = result.instance;
     await go.run(inst)
   })
+
+  // TODO: fix this.
+  // This is dumb but i dont know how to trigger js function in go/wasm 
+  setTimeout(() => {
+    if (isValidURL(pageURL)) {
+      prettifyPage();
+    }
+  }, 500);
 }
 
 init();
