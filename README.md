@@ -5,8 +5,8 @@ Using Go => WebAssembly to replace the outdated, unmaintained readability lib fr
 
 ## TODO
 
-[ ] Reduce wasm binary size. Look more into TinyGo.
-[ ] Find out how to trigger a `js.Func` at init.
+- [ ] Reduce wasm binary size. Look more into TinyGo.
+- [ ] Find out how to trigger a `js.Func` at init.
 
 ## License
 
