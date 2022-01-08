@@ -16,14 +16,18 @@ const EMPTY_MESSAGE string = ""
 const FAIL_TO_DOWNLOAD_MESSAGE string = "<a href=\"#\" aria-busy=\"true\">Failed to download URL…</a>"
 const FAIL_TO_PARSE_MESSAGE string = "<a href=\"#\" aria-busy=\"true\">Failed to parse URL…</a>"
 
+var (
+	document js.Value
+)
+
 func main() {
 	c := make(chan struct{}, 0)
+	document = js.Global().Get("document")
 	js.Global().Set("loadURL", js.FuncOf(loadURLFunction))
 	<-c
 }
 
 func updateStatus(message string) {
-	document := js.Global().Get("document")
 	document.Call("getElementById", "status").Set("innerHTML", message)
 }
 
@@ -56,7 +60,6 @@ func loadURLFunction(this js.Value, args []js.Value) interface{} {
 		fmt.Printf("Favicon : %s\n", article.Favicon)
 		fmt.Println()
 
-		document := js.Global().Get("document")
 		document.Call("getElementById", "title").Set("innerHTML", article.Title)
 		document.Call("getElementById", "output").Set("innerHTML", article.Content)
 
