@@ -31,10 +31,6 @@ func loadURLFunction(this js.Value, args []js.Value) interface{} {
 	updateStatus(WIP_MESSAGE)
 	url := args[0].String()
 
-	document := js.Global().Get("document")
-	pageURL := document.Call("getElementById", "pageURL").Get("value").String()
-	document.Call("getElementById", "output").Set("value", pageURL)
-
 	go func() {
 		resp, err := http.Get(url)
 		if err != nil {
