@@ -1,7 +1,9 @@
 reader2
 =======
 
-Using Go => WebAssembly to replace the outdated, unmaintained readability lib from Mozilla.
+This is successor to the [old reader project](https://github.com/tuananh/reader) of mine written in JS and deployed on CloudFlare workers.
+
+This is just a weekend project for me to learn Go and WebAssembly. Pardon the beginner mistakes you may find in this repo :)
 
 ![](./assets/preview.png)
 
