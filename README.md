@@ -3,6 +3,8 @@ reader2
 
 Using Go => WebAssembly to replace the outdated, unmaintained readability lib from Mozilla.
 
+![](./assets/preview.png)
+
 ## TODO
 
 - [ ] Reduce wasm binary size. Look more into TinyGo.
