@@ -19,6 +19,7 @@ https://<this-website.com>/?url=https://www.theverge.com/xyz
 
 - [ ] Reduce wasm binary size. Look more into TinyGo.
 - [ ] Find out how to trigger a `js.Func` at init.
+- [ ] Generate post thumbnail if available.
 
 ## License
 
