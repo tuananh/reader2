@@ -8,48 +8,34 @@
         <script src="wasm_exec.js" defer></script>
         <script src="reader2.js" defer></script>
 
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
-        />
+        <link rel="stylesheet" href="https://unpkg.com/bamboo.css" />
     </head>
 
     <body>
-        <main class="container">
-            <nav>
-                <ul>
-                    <li><strong>Reader2</strong></li>
-                </ul>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="https://github.com/tuananh/reader2" target="_blank">GitHub</a></li>
-                </ul>
-            </nav>
+        <h1>Reader2</h1>
+        <p>
+            <a href="#">About</a> |
+            <a href="#">FAQs</a> | <a href="https://github.com/tuananh/reader2" target="_blank">GitHub</a>
+        </p>
 
-            <div class="grid">
-                <div>
-                    <input
-                        type="text"
-                        name="pageURL"
-                        id="pageURL"
-                        placeholder="Enter page URL here!"
-                    />
-                </div>
-                <div>
-                    <button type="button" id="loadURL">Prettify it!</button>
-                </div>
-                <div>
-                    <button type="button" id="copyShareURL">Copy share URL</button>
-                </div>
-            </div>
+        <hr />
 
-            <div id="status"></div>
-            
-            <article>
-                <h2 id="title"></h2>
-                <div name="output" id="output"></div>
-            </article>
-        </main>
+        <p>
+            <input
+                type="text"
+                name="pageURL"
+                id="pageURL"
+                placeholder="Enter page URL here!"
+            />
+        </p>
+        <p>
+            <button type="button" id="loadURL">Prettify it!</button>
+            <button type="button" id="copyShareURL">Copy share URL</button>
+        </p>
+        <p id="status"></p>
+        <p id="result">
+            <h2 id="title"></h2>
+            <p id="output"></p>
+        </p>
     </body>
 </html>
